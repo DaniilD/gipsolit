@@ -23,11 +23,27 @@ html {
 section {
   padding: 10rem 0 ;
 }
+ul,
+li {
+  padding: 0;
+  margin: 0;
+}
 .section-header {
   text-align: center;
   margin: 2rem 0 10rem;
   font-family: 'ProximaNovaBold', sans-serif;
   font-size: 3.6rem;
+}
+.section-header_light {
+  color: #ffffff;
+  margin-top: 0;
+}
+.section-header h2 {
+  font-family: 'ProximaNovaBold', sans-serif;
+  font-size: 3.6rem;
+}
+.section-header p {
+  font-size: 1.4rem;
 }
 /*main*/
 body {
@@ -245,6 +261,60 @@ textarea:focus {
           transform: translateX(-50%);
   padding: 4rem 6rem;
 }
+/*Секция с ценами*/
+.price {
+  background: #46b814 url('../img/bg-prices.png') center;
+  background-size: cover;
+  /*Оформление карточки с тарифами*/
+}
+.price-header-btn {
+  margin-top: 2.5rem;
+}
+.price-button {
+  text-align: right;
+}
+.price-block {
+  background-color: #ffffff;
+  -webkit-box-shadow: 7px 12px 21px 0px rgba(0, 0, 0, 0.17);
+  box-shadow: 7px 12px 21px 0px rgba(0, 0, 0, 0.17);
+  text-align: center;
+  padding: 1rem 3rem;
+  min-height: 50rem;
+}
+.price-block h4 {
+  font-size: 1.9rem;
+  font-family: 'ProximaNovaBold', sans-serif;
+  margin: 3rem 0;
+}
+.price-block img {
+  display: inline-block;
+  width: 100%;
+  max-width: 30rem;
+  height: 21.5rem;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+.price-tag {
+  display: block;
+  margin-bottom: 2rem;
+  font-size: 1.9rem;
+  font-family: 'ProximaNovaBold', sans-serif;
+}
+.price-list {
+  list-style: none;
+  min-height: 14rem;
+  text-align: center;
+  line-height: 1.6;
+}
+.price-list li:before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  width: 1.4rem;
+  height: 1.4rem;
+  background: url('../img/checked.png') no-repeat center;
+  margin-right: 1rem;
+}
 /*media request*/
 @media (max-width: 991px) {
   .main {
@@ -259,6 +329,20 @@ textarea:focus {
   }
   .main-content {
     margin-top: 3rem;
+  }
+  .price-block {
+    margin-top: 2rem;
+  }
+  .price-button {
+    text-align: center;
+    padding: 2rem 0;
+  }
+  .price-header-btn {
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+  .section-header_light {
+    margin-bottom: 0;
   }
 }
 @media (max-width: 767px) {
