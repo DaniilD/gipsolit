@@ -48,6 +48,33 @@ html{
 }
 
 /*Typographics*/
+.form{
+	/*Поле для ввода*/
+			&-input{
+				display: block;
+				margin: 2rem 0;
+				border:1px solid @border_input;
+				width: 100%;
+				padding: 1.5rem;
+				border-radius: 5px;
+			}
+			/*label*/
+			label{
+				padding: 0.5rem;
+				position: absolute;
+				left:50%;
+				font-size: 1.3rem;
+				transform: translateX(-50%) translateY(-50%);
+				background-color: @white;
+			}
+			&-btn{
+				.button;
+				display:block;
+				height: 5.5rem;
+				width: 100%;
+				font-size: 1.6rem;
+			}
+}
 section{
 	padding: 10rem 0 ;
 }
@@ -135,31 +162,7 @@ body{
 					font-size: 1.9rem;
 				}
 			}
-			/*Поле для ввода*/
-			&-input{
-				display: block;
-				margin: 2rem 0;
-				border:1px solid @border_input;
-				width: 100%;
-				padding: 1.5rem;
-				border-radius: 5px;
-			}
-			/*label*/
-			label{
-				padding: 0.5rem;
-				position: absolute;
-				left:50%;
-				font-size: 1.3rem;
-				transform: translateX(-50%) translateY(-50%);
-				background-color: @white;
-			}
-			&-btn{
-				.button;
-				display:block;
-				height: 5.5rem;
-				width: 100%;
-				font-size: 1.6rem;
-			}
+			
 			small{
 				display: block;
 				margin-top: 1.5rem;
@@ -353,10 +356,16 @@ font-size: 1.9rem;
 
 /*Feedback*/
 .feedback{
+	position:relative;
 	background: url(../img/feedback/bg.png) no-repeat center;
 	-webkit-background-size: cover;
 	background-size: cover;
-
+	.hand{
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		max-width:30rem;
+	}
 	&-slider{
 		background-color: @white;
 		-webkit-box-shadow:   6px 10px 18px 0px rgba(0,0,0,0.11);
@@ -416,9 +425,45 @@ font-size: 1.9rem;
 		}
 	}
 
+	&-form{
+		padding: 4rem 10rem;
+		margin-top: 5rem;
+		background-color: @white;
+		text-align: center;
+		h3{
+			.bold();
+			font-size: 2rem;
+			margin-bottom: 2rem;
+		}
+
+		label{
+			transform:translate(-50%,8px);
+		}
+
+		&-btn{
+			max-width: 30rem;
+			margin:auto;
+		}
+	}
+
+
 }
 
+
+
 /*media request*/
+@media (max-width:1199px){
+	.feedback{
+		&-form{
+			padding: 3rem 5rem;
+		}
+		.fotorama{
+			margin-bottom: 3rem;
+		}
+	}
+}
+
+
 @media (max-width:991px){
 	.main{
 		background-position: top right;
@@ -451,11 +496,24 @@ font-size: 1.9rem;
 	.section-header_light{
 		margin-bottom: 0;
 	}
+
+	.feedback{
+		&-form{
+			label{
+				transform:translate(-50%,-50%);
+			}
+		
+		}
+	}
 }
 
 @media (max-width: 767px){
 	.main{
 		background-position: top left;
+
+		h1{
+			font-size: 2.5rem;
+		}
 	}
 	.header{
 		text-align: center;	
@@ -463,6 +521,15 @@ font-size: 1.9rem;
 
 	.wrap-block{
 		text-align: center;
+	}
+	.feedback{
+		&-prev-btn{
+			left: 0;
+		}
+
+		&-next-btn{
+			right: 0;
+		}
 	}
 }
 
