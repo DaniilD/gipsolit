@@ -403,6 +403,17 @@ textarea:focus {
   max-width: 30rem;
   margin: auto;
 }
+.scheme {
+  background: #ffffff url('../img/scheme/bg.png') bottom right no-repeat;
+  background-size: 65rem;
+}
+.scheme-block {
+  min-height: 30rem;
+}
+.scheme-block h3 {
+  font-size: 2rem;
+  font-family: 'ProximaNovaBold', sans-serif;
+}
 /*media request*/
 @media (max-width: 1199px) {
   .feedback-form {
@@ -463,5 +474,12 @@ textarea:focus {
   }
   .feedback-next-btn {
     right: 0;
+  }
+  .scheme {
+    background: none;
+    text-align: center;
+  }
+  .scheme-block {
+    min-height: 22rem;
   }
 }
