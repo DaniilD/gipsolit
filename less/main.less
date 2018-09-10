@@ -41,16 +41,19 @@ font-family: 'ProximaNovaRg', sans-serif;
 @bg-light:#f5f5f5;
 @white:#fff;
 @border_input:#dddddd;
+@problems-color:#e8e8e8;
+@upsell-bg:#286b0a;
 
 /*basic settings*/
 html{
 	font-size: 10px;
 }
 
+
 /*Typographics*/
 .form{
 	/*Поле для ввода*/
-			&-input{
+			&-input, &-textarea {
 				display: block;
 				margin: 2rem 0;
 				border:1px solid @border_input;
@@ -104,7 +107,26 @@ ul,li{
 
 }
 
+/*Оформление подвала*/
+footer{
+	padding: 4rem 0;
 
+}
+
+.footer{
+
+	&-contacts{
+		text-align: center;
+		padding-top: 0.5rem;
+		p{
+			margin: 0;
+			padding: 0;
+		}
+	}
+	&-dev{
+		text-align: right;
+	}
+}
 /*main*/
 body{
 	.reg();
@@ -497,6 +519,131 @@ border-radius: 50%;
 }
 
 
+/*Мы развеем все опасения*/
+.problems{
+position:relative;
+	&-list{
+		margin-bottom: 2rem;
+		border:4px solid;
+		padding: 2rem;
+		min-height: 35rem;
+		h4{
+			color:black;
+			.bold();
+			font-size: 2.1rem;
+		}
+		ul{
+			list-style: none;
+			padding-left: 0;
+			padding-top: 2rem;
+			li{
+				position:relative;
+				margin-bottom: 3rem;
+				padding-left: 3rem;
+				&:before{
+				content: '';
+				position: absolute;
+				width: 3rem;
+				height: 3rem;
+				left: 0;
+				top: 0;
+				top: 50%;
+				transform: translateY(-50%);
+				
+
+			}
+			}
+
+			
+		}
+
+		&_bad{
+			border-color:@problems-color;
+			h4{
+				opacity: 0.5;
+			}
+			ul li:before{
+				background: url('../img/problems/cancel-music.png') no-repeat center;
+				
+			}	
+	    }
+		&_good{
+			border-color: @icons-color;
+			ul li:before{
+				background: url('../img/problems/checked-symbol.png') no-repeat center;
+				
+			}	
+		}
+}
+	&-wooman{
+		position: absolute;
+		bottom: 0;
+		width: 30rem;
+		left: 50%;
+		transform:translateX(-55%);
+	}
+}
+/*Материалы*/
+.materials{
+	&-slider{
+		padding-top: 5rem;
+	}
+	&-img{
+		img{
+			display: block;
+			margin: 0 auto;
+		}
+		
+	}
+}
+/*Посмотрите как мы работаем*/
+.tour{
+	background: @white url('../img/tour/Слой 31.png') no-repeat center;
+	-webkit-background-size: cover;
+	background-size: cover;
+	&-subtitle{
+		font-size: 2.2rem;
+	}
+}
+
+
+/*Доп условия*/
+
+.upsell{
+	background: @upsell-bg;
+	&-block{
+		text-align: center;
+		color:@white;
+		min-height: 15rem;
+		margin-bottom: 2rem;
+		img{
+			display: inline-block;
+			margin-bottom: 2rem;
+			width: 100%;
+			max-width: 33rem;
+			min-height: 25rem;
+		}
+		p{
+			font-size: 2rem;
+		}
+	}
+}
+
+/*Контакты*/
+.contacts{
+	h2{
+		.bold();
+	}
+	p{
+		margin-bottom: 2rem;
+	}
+
+	&-form-header{
+		font-size: 1.9rem;
+		.reg();
+	}
+}
+
 /*media request*/
 @media (max-width:1199px){
 	.feedback{
@@ -511,6 +658,12 @@ border-radius: 50%;
 	.all-inclusive{
 		.media{
 		min-height: 11rem;
+		}
+	}
+
+	.problems{
+		&-list{
+			min-height: 40rem;
 		}
 	}
 }
@@ -557,6 +710,32 @@ border-radius: 50%;
 		
 		}
 	}
+
+	.problems{
+		&-wooman{
+			display: none;
+		}
+		&-list{
+			min-height: auto;
+		}
+	}
+
+	.tour{
+		background: none;
+		background-color: @white;
+	}
+	footer{
+		text-align: center;
+	}
+	.footer{
+		&-contacts{
+			margin: 2rem 0;
+
+		}
+		&-dev{
+			text-align: center;
+		}
+	}
 }
 
 @media (max-width: 767px){
@@ -591,6 +770,8 @@ border-radius: 50%;
 			min-height: 22rem;
 		}
 	}
+
+
 }
 
 
